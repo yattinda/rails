@@ -26,4 +26,22 @@
 
 <br>
 
+<h1>find User</h1>
+<%= form_tag action: :where do  %>
+<div class="field">
+  <%= label_tag :name, "名前:" %>
+  <%= text_field_tag :name %>
+</div>
+
+<div class="field">
+  <%= label_tag :user_id, "学籍番号" %>
+  <%= number_field_tag :user_id %>
+</div>
+  <%= submit_tag "検索" %>
+  <br>
+
+<%= link_to 'Back', users_path %>
+
+<% end %>
+
 <%= link_to 'New User', new_user_path %>

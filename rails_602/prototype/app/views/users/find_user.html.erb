@@ -1,0 +1,15 @@
+<h1>find User</h1>
+<%= form_tag action: :where do  %>
+<div class="field">
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+<div class="field">
+  <%= form.label :user_id %>
+  <%= form.number_field :user_id %>
+</div>
+
+<%= link_to 'Back', users_path %>
+
+<% end %>

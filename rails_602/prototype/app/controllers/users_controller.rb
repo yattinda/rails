@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+
   # GET /users/1
   # GET /users/1.json
   def show
@@ -19,6 +20,14 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+  end
+
+  def find
+  end
+
+  def where
+    @users = User.where("name = ? AND user_id = ?",params[:name],params[:user_id] )
+    render "users/index"
   end
 
   # POST /users
@@ -59,6 +68,11 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+
+
+
+
+
   end
 
   private
@@ -71,4 +85,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :user_id)
     end
-end
+  end
