@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def where
-    @users = User.where("name = ? AND user_id = ?",params[:name],params[:user_id] )
+    @users = User.where("name = ? OR user_id = ?",params[:name],params[:user_id] )
     render "users/index"
   end
 
